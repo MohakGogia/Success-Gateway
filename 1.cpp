@@ -11,18 +11,20 @@ int main()
 	cin>>n;
 
 	cout<<"Enter array: "<<endl;
-	for(int i = 0; i < n ; i++){
+	for(int i = 0; i < n ; i++)
+	{
 		cin>>a[i];
 	}
 	
 	x=a[0];
 	
-	for(int i = 1; i < n ; i++){
+	for(int i = 1; i < n ; i++)
+	{
 		x ^= a[i];
 	}
 	
 	cout<<"Odd occurence element: "<<endl;
-    cout<<x;
+	cout<<x;
     
 	return 0;
 }
