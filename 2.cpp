@@ -1,15 +1,16 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-void reverse(int *a, int start,int end)
+void reverse(vector<int> &v, int start, int end)
 {
-    while(start<end)
+    while(start < end)
     {
     int temp;
-    temp=a[start];
-    a[start]=a[end];
-    a[end]=temp;
+    temp = v[start];
+    v[start] = v[end];
+    v[end] = temp;
     start++;
     end--;
     }
@@ -18,7 +19,7 @@ void reverse(int *a, int start,int end)
 int main()
 {
 	int n,i,d;
-	int a[10];
+	vector<int> v;
 	
 	cout<<"Enter n: "<<endl;
 	cin>>n;
@@ -26,20 +27,26 @@ int main()
 	cout<<"Enter array: "<<endl;
 	for(i = 0; i < n ; i++)
 	{
-		cin>>a[i];
+	    int num;
+	    cin>>num;
+		v.push_back(num);
 	}
 	
 	cout<<"Enter d: "<<endl;
 	cin>>d;
 	
-	reverse(a,0,d-1);
-	reverse(a,d,n-1);
-	reverse(a,0,n-1);
+	if(d>n){
+	d=d%n;
+	}
+	
+	reverse(v,0,d-1);
+	reverse(v,d,n-1);
+	reverse(v,0,n-1);
 	
 	cout<<"Left Rotated array:"<<endl;
 	for(i = 0; i < n ; i++)
 	{
-		cout<<a[i]<<" ";
+		cout<<v[i]<<" ";
 	}
 	
 	return 0;
