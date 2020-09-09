@@ -16,7 +16,7 @@ int main()
 	{
 	    int num;
 	    cin>>num;
-		v.push_back(num);
+	    v.push_back(num);
 	}
 	
 	cout<<"Leaders in array:"<<endl;
