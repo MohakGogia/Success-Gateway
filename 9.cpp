@@ -19,20 +19,23 @@ int main()
 		v.push_back(num);
 	}
 	
-    for(i = 0; i < n; i++)
+    for(L = 0; L < n-1; L++)
     {
-        if ( v[i] > v[i+1] )
-            L = i;
+        if ( v[L] > v[L+1] )
             break;
     }
-    
-    for(i = n-1; i >= 0; i--)
+
+    if ( L == n-1 )
     {
-        if ( v[i] < v[i-1] )
-            R = i;
+        cout<<"Array is already sorted";
+        return 0;
+    }
+
+    for(R = n-1; R > 0; R--)
+    {
+        if ( v[R] < v[R-1] )
             break;
     }
-    
     
     max = v[L];
     min = v[R];
@@ -48,16 +51,22 @@ int main()
 	for(i = 0; i < L ; i++)
 	{
 	    if (v[i] > min)
-	        L=i;
+	    {
+            L = i;
+            break;
+        }
 	}
 	
 	for(i = n-1; i >= R+1 ; i--)
 	{
 	    if (v[i] < max)
+        {
 	        R=i;
+            break;
+        }
 	}
 	
-	cout<<"Max length: "<<R-L;
+	cout<<"Max length: "<<R-L+1;
 	
 	return 0;
 }

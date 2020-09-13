@@ -5,21 +5,20 @@ using namespace std;
 
 int bsearch(vector<int> v, int l, int h, int key)
 {
-    int mid;
-    while(l<=h)
-    {
-    mid = l + (h-l)/2;
-    if(v[mid]== key)
+    if ( l > h)
+        return -1;
+    int mid = l + (h-l)/2;
+    if(v[mid] == key)
         return mid;
-    if(key > v[l] && key <= v[mid])
-        return bsearch(v, l, mid-1, key);
-    return bsearch(v, mid+1, h, key);
+    if( v[l] <= v[mid] )
+    {
+        if(key >= v[l] && key <= v[mid])
+            return bsearch(v, l, mid-1, key);
+        return bsearch(v, mid+1, h, key);
+    }
     if(key >= v[mid] && key <= v[h])
         return bsearch(v, mid+1, h, key);
     return bsearch(v, l, mid-1, key);
-    }
-    
-    return -1;
 }
 
 int main()
@@ -47,6 +46,6 @@ int main()
 	    cout<<"Not found";
     else
         cout<<"Found at: "<<pos;
-	
+
 	return 0;
 }
