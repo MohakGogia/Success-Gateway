@@ -49,6 +49,18 @@ void display()
 	}
 }
 
+void swapdata()
+{
+    Node *p = head;
+    while(p && p->next)
+    {
+        int temp = p->data;
+        p->data = p->next->data;
+        p->next->data = temp;
+        p=p->next->next;
+    }
+}
+
 int main()
 {	
 	insert(1);
@@ -56,8 +68,11 @@ int main()
 	insert(3);
 	insert(4);
 	insert(5);
-    insert(6);
-	cout<<"Linked List: "<<endl;
+    cout<<"Linked List: "<<endl;
 	display();
+    swapdata();
+    cout<<"\nLinked List after swapping: "<<endl;
+    display();
+
 	return 0;
 }
