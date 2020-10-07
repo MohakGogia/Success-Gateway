@@ -56,7 +56,7 @@ int main()
 	insert(3);
 	insert(4);
 	insert(5);
-    insert(6);
+    	insert(6);
 	cout<<"Linked List: "<<endl;
 	display();
 	return 0;
