@@ -44,7 +44,7 @@ int main()
 
     for(int i=1;i<v.size();i++)
     {
-        if(v[i-1]>v[i])
+        if(v[i-1]>=v[i])
         {
             cout<<"Not BST";
             return 0;
