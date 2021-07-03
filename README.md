@@ -1,2 +1,2 @@
-# 4th Year Programming Questions
-Contains my Success Gateway Solutions in C/C++ language.
+# Data Structures and Algorithms
+Contains my Success Gateway Solutions in C++ language.
